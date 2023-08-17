@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   FilterList? selectedMenu;
 
-  String name = 'bbc-news';
+
 
   @override
   Widget build(BuildContext context) {
@@ -54,13 +54,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   icon: const Icon(Icons.more_vert, color: Colors.black,),
                   onSelected: (FilterList item){
                   if(FilterList.bbcNews.name == item.name){
-                    name = 'bbc';
+
+                   _newsController.name = 'bbc-news';
+
                   }
                   if(FilterList.aryNews.name == item.name){
-                    name = 'ary';
+                   _newsController.name = 'ary-news';
+
                   }
                   if(FilterList.alJazeera.name == item.name){
-                    name = 'al-jazeera-english';
+                   _newsController.name = 'al-jazeera-english';
+
                   }
                   setState(() {
                     selectedMenu= item;

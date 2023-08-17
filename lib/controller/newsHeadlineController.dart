@@ -11,6 +11,8 @@ class NewsHeadlineController extends GetxController{
   late NewsChannelsHeadlinesModel newsModel;
   RxList<Articles> articleList = <Articles>[].obs;
 
+  var name = "ary-news";
+
 
 
   @override
@@ -23,7 +25,7 @@ class NewsHeadlineController extends GetxController{
   fetchNewsHeadline()async{
     isLoading(true);
     try {
-      var result = await ApiServices.fetchNewsChannelHeadlinesApi();
+      var result = await ApiServices.fetchNewsChannelHeadlinesApi(name);
       if(result.runtimeType == int){
         if(kDebugMode){
           print('Error $result');
